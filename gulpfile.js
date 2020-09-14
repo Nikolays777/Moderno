@@ -14,7 +14,7 @@ gulp.task('clean', async function(){
 
 gulp.task('scss', function(){
   return gulp.src('app/scss/**/*.scss')
-    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(sass({outputStyle: 'expanded'}))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 8 versions']
     }))
@@ -28,6 +28,7 @@ gulp.task('css', function(){
     'node_modules/normalize.css/normalize.css',
     'node_modules/slick-carousel/slick/slick.css',
     'node_modules/rateyo/src/jquery.rateyo.css',
+    'node_modules/ion-rangeSlider/css/ion.rangeSlider.css',
   ])
     .pipe(concat('_libs.scss'))
     .pipe(gulp.dest('app/scss'))
@@ -49,6 +50,7 @@ gulp.task('js', function(){
     'node_modules/slick-carousel/slick/slick.js',
     'node_modules/mixitup/dist/mixitup.js',
     'node_modules/rateyo/src/jquery.rateyo.js',
+    'node_modules/ion-rangeSlider/js/ion.rangeSlider.js',
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
