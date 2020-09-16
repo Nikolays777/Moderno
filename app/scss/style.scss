@@ -38,7 +38,8 @@
   background-color: $green;
 }
 
-.header__btn-register{
+.header__btn-register,
+.header__btn-logout{
   background-color: $red;
   margin-left: 7px;
 }
@@ -60,13 +61,287 @@
       margin-left: 30px;
     }
   }
-  a{
-    color: #fff;
+}
+
+.header__circle{
+  &.active{
+    display: block;
+  }
+  display: none;
+  position: relative;
+  width: 34px;
+  height: 34px;
+  font-size: 14px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  &::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #a0a0a0;
     font-size: 14px;
+  }
+  & + .header__circle{
+    margin-left: 15px;
+  }
+  span{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    right: -7px;
+    top: -7px;
+    font-size: 11px;
+    color: #fff;
   }
 }
 
-//Search
+.header__box{
+  display: flex;
+  align-items: center;
+}
+
+.header__btn-login--off{
+  display: none;
+}
+
+.header__btn-logout{
+  display: none;
+  &.header__btn-login--on{
+    display: block;
+  }
+}
+
+.notification{
+  span{
+    background-color: #fcb322;
+  }
+}
+.message{
+  span{
+    background-color: #ef6c00;
+  }
+}
+.basket{
+  span{
+    background-color: #95c85a;
+  }
+}
+
+.user{
+  margin-left: 20px;
+  margin-right: 25px;
+  padding-right: 20px;
+  position: relative;
+  &::before{
+    position: absolute;
+    content: '\f107';
+    font-family: 'icomoon';
+    font-size: 16px;
+    color: #707070;
+    top: 0;
+    right: 0;
+  }
+  &__inner{
+    display: flex;
+    align-items: center;
+  }
+  &__images{
+    margin-right: 15px;
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  &__info{
+    font-size: 14px;
+    line-height: 24px;
+  }
+  &__name{  
+    @include f500;
+    color: #222;
+  }
+  &__money{
+    @include f700;
+    color: $green;  
+  }
+}
+
+
+
+.user__menu{
+  border: 0px solid #cccccc;
+  background-color: #fff;
+  position: absolute;
+  top: 69px;
+  left: 20px;
+  padding: 0 20px;
+  width: 158px;
+  transition: all .3s;
+  height: 0;
+  overflow: hidden;
+
+  a{
+    font-size: 12px;
+    color: #546e7a;
+    margin-bottom: 15px;
+  }
+}
+
+.circle__menu{
+  position: absolute;
+  top: 62px;
+  right: 0;
+  border-top: 1px solid #e0e0e0;
+  height: 0;
+  overflow: hidden;
+  transition: all .3s;
+}
+
+.basket__box,
+.message__box,
+.notification__box{
+  margin-top: 54px;
+  margin-left: 15px;
+  &:hover{
+    .header__circle::before{
+      color: $bg;
+    }
+    .circle__menu{
+      overflow: hidden;
+      height: auto;
+    }
+    .circle__item{
+      padding: 23px;
+      border: 1px solid #e0e0e0;
+    }
+  }
+}
+
+.user__box,
+.basket__box,
+.message__box,
+.notification__box{
+  position: relative;
+  height: 90px;
+  margin-top: 53px;
+  &:hover{
+  .user__menu{
+    min-height: 100%;
+    border: 1px solid #cccccc;
+    background-color: #fff;
+    top: 63px;
+    left: 20px;
+    padding: 20px;
+    width: 158px;
+    height: auto;
+    }
+  }
+}
+
+
+
+.circle__item{
+  background-color: #fff;
+  border: 0px solid #e0e0e0;
+  border-right-width: 1px;
+  border-left-width: 1px;
+  border-top: none;
+  padding: 0 23px;
+  transition: all .3s;
+  display: flex;
+  align-items: center;
+  width: 296px;
+  position: relative;
+  &::before{
+    position: absolute;
+    top: 27px;
+    right: 30px;
+    color: #b0bec5;
+    font-size: 16px;
+  }
+}
+
+.circle__images{
+  margin-right: 15px;
+}
+
+.circle__info-name{
+  @include f500;
+  color: $bg;
+}
+.circle__info-theme{
+  font-size: 12px;
+  color: $green;
+}
+.circle__info-price{
+  @include f500;
+  color: #000;
+  font-size: 16px;
+}
+
+.circle__info-date{
+  color: #707070;
+  font-size: 10px;
+}
+
+.circle__summ{
+  padding: 16px 23px 12px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-top: none;
+}
+
+.circle__title{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 13px;
+  padding-right: 22px;
+  margin-bottom: 15px;
+  @include f700;
+  font-size: 16px;
+  color: #263238;
+}
+
+.circle__btn{
+  @include f700;
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 5px;
+  background-color: $green;
+  text-align: center;
+  width: 105px;
+}
+
+.circle__btn-chekout{
+  width: 123px;
+  margin-left: 6px;
+  background-color: #e85647;
+}
+
+.notification__menu,
+.message__menu{
+  .circle__images{
+    margin-right: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+  .circle__info{
+    line-height: 18px;
+  }
+}
+
+.icons-color::before{
+  color: #ef6c00;
+}
+//end header
+
+
+//start search
 
 .search{
   background-repeat: no-repeat;
