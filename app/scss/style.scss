@@ -924,13 +924,14 @@ button.icon-unsorted{
   }
 }
 
-.product__item{
-  &.list{
-    max-width: 100%;
+.product-page__items{
+  .product__item{
+      &.list{
+        max-width: 100%;
     .product__item-img{
-      min-width: 240px;
       float: left;
-      min-height: 100%;
+      width: 240px;
+      min-height: 100%; 
     }
     .product__item-text{
       display: block;
@@ -963,6 +964,8 @@ button.icon-unsorted{
     }
     
   }
+  }
+
 }
 
 
