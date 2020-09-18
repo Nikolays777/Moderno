@@ -3,7 +3,9 @@
 @import "libs";
 @import "fonts";
 
-
+.header{
+  background-color: #fff;
+}
 .header__top-inner{
   display: flex;
   justify-content: space-between;
@@ -46,6 +48,7 @@
 
 .header__menu{
   background-color: $bg;
+  color: #fff;
 }
 
 .menu{
@@ -102,6 +105,8 @@
 .header__box{
   display: flex;
   align-items: center;
+  margin-left: auto;
+  z-index: 1;
 }
 
 .header__btn-login--off{
@@ -126,13 +131,13 @@
   }
 }
 .basket{
+  margin-right: 20px;
   span{
     background-color: #95c85a;
   }
 }
 
 .user{
-  margin-left: 20px;
   margin-right: 25px;
   padding-right: 20px;
   position: relative;
@@ -337,6 +342,11 @@
 
 .icons-color::before{
   color: #ef6c00;
+}
+
+.header__btn-menu,
+.menu__btn{
+  display: none;
 }
 //end header
 
@@ -1239,7 +1249,7 @@ button.icon-unsorted{
     }
     
   }
-  }
+}
 
 }
 
