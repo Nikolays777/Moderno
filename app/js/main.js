@@ -1,4 +1,5 @@
 $(function(){
+  
   $(".js-range-slider").ionRangeSlider({
     type: "double",
     min: 0,
