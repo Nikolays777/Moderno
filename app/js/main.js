@@ -49,6 +49,7 @@ $(function(){
     return false
   })
 
+  $('input[type="file"], select').styler();
     
   const mixer = mixitup('.products__inner-box')
   

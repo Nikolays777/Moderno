@@ -1405,6 +1405,7 @@ button.icon-unsorted{
 }
 
 .product-one__box{
+  margin-top: 45px;
   margin-bottom: 55px;
   display: flex;
   justify-content: space-between;
@@ -1573,6 +1574,29 @@ button.icon-unsorted{
   display: flex;
   justify-content: space-between;
   padding: 30px 0;
+
+  .jq-selectbox__select {
+    height: 32px;
+    padding: 0 25px 0 10px;
+    border: 1px solid #cccccc;
+    background: #ffffff;
+    border-bottom-color: #cccccc;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 13px;
+    font-family: Roboto;
+    font-weight: 400px;
+    color: #70838d;
+    text-shadow: none;
+  }
+  .jq-selectbox__trigger {
+    right: -3px;
+    border-left: none;
+  }
+  .jq-selectbox__trigger-arrow {
+    border-top: 5px solid #8bc34a;
+  }
+
 }
 
 .price__product{
@@ -1986,6 +2010,29 @@ button.icon-unsorted{
     color: #707070;
     padding: 0 10px;
   }
+  .jq-selectbox__trigger{
+    border-left: none;
+  }
+  .jq-selectbox{
+    max-width: 540px;
+    width: 100%;   
+    
+  }
+  .jq-selectbox__select{
+    height: 40px;
+    padding-top: 3px;
+    background: #f9f9f9;
+    box-shadow: none;
+    text-shadow:none;
+    border: 1px solid #d7d7d7;
+    border-bottom-color: 1px solid #d7d7d7;
+    font-size: 14px;
+    color: #707070;
+  }  
+  .jq-selectbox__trigger-arrow{
+    top: 16px;
+    border-top: 5px solid #444;
+  }
 }
 //settings
 //profile
@@ -2109,9 +2156,6 @@ button.icon-unsorted{
     margin-right: 0;
   }
 }
-.profile-settings{
-
-}
 .personal-box {
   background-color: #fff;
   padding: 35px 40px 25px;
@@ -2175,4 +2219,139 @@ button.icon-unsorted{
 }
 
 //profile
+//upload
+.upload__inner {
+  background-color: #fff;
+  border: 1px solid #d7d7d7;
+  margin-bottom: 110px;
+  padding-bottom: 46px;
+  button{
+    color: #fff;
+    background-color: $green;
+    border: none;
+    padding: 16px 36px;
+    margin-left: 215px;
+  }
+}
+.upload__inner-title {
+  padding: 16px 35px 18px;
+  @include f500;
+  font-size: 24px;
+  color: $bg;
+  border-bottom: 1px solid #d7d7d7;
+  margin-bottom: 40px;
+}
+.upload__inner-content {
+  margin-bottom: 30px;
+  padding-left: 45px;
+  padding-right: 50px;
+
+}
+.upload-line {
+  margin-bottom: 25px;
+  display: flex;
+  label{
+    min-width: 175px;
+    padding-right: 15px;
+    color: #444;
+    padding-top: 5px;
+    span{
+      color: $green;
+    }
+    &::placeholder{
+      color: #707070;
+    }
+  }
+  select,
+  input,
+  textarea{
+    width: 100%;
+    display: block;
+    border: 1px solid #d7d7d7;
+    height: 40px;
+    background-color: #f9f9f9;
+    padding: 0 18px;
+  }
+  textarea{
+    resize: none;
+    height: 150px;
+    padding: 8px 18px;
+  }
+  .jq-file{
+    width: 100%;
+    border-radius: none;
+    box-shadow: none;
+    border: 1px solid #d7d7d7;
+    height: 40px;
+    background-color: #f9f9f9;
+    padding: 0 18px
+  }
+  input[type="file"]{
+    outline: none;
+  }
+  .jq-file__browse {
+    position: absolute;
+    top: 5px;
+    right: auto;
+    left: 9px;
+    font-size: 12px;
+    line-height: 26px;
+    padding: 0 12px;
+    border: 1px solid #d7d7d7;
+    border-left: 1px solid #d7d7d7;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: 0;
+    text-shadow: none;
+    color: #444;
+  }
+  .jq-file__name {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-bottom-color: transparent;
+    border-radius: 0px;
+    background: #FFF;
+    box-shadow: none;
+    font-size: 12px;
+    color: #707070;
+    margin-left: 100px;
+    outline: none;
+  }
+  .jq-selectbox{
+    width: 100%;
+  }
+  .jq-selectbox__select {
+    height: 40px;;
+    padding: 0 18px;
+    border: 1px solid #d7d7d7;
+    border-bottom-color: #d7d7d7;
+    border-radius: 0;
+    background: #f9f9f9;
+    box-shadow: none;
+    font-family: 'Roboto-Regular', sans-serif;
+    font-weight: 400;
+    color: #707070;
+    text-shadow: none;
+    line-height: 40px;
+  }
+  .jq-selectbox__trigger-arrow{
+    border: none;
+    position: relative;
+    &::before{
+      content: '\f0d7';
+      font-family: 'icomoon';
+      position: absolute;
+      left: 25px;
+      top: -12px;
+    }
+  }
+  .jq-selectbox__trigger{
+    border-left: none;
+  }
+}
+
+//upload
 @import "media";
