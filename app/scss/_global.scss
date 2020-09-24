@@ -1,7 +1,7 @@
 html {
   box-sizing: border-box;
   height: 100%;
-  overflow-x: hidden;
+  
 }
 
 *,
@@ -36,6 +36,11 @@ button{
 
 input{
   border: none;
+}
+html,
+body{
+  position: relative;
+  overflow-x: hidden;
 }
 
 body{
@@ -99,6 +104,8 @@ body{
 .breadcrams{
   &__inner{
     padding: 45px 0 40px;
+    overflow: hidden;
+    width: 1200px;
   }
   &__list{
     li{
@@ -137,4 +144,8 @@ body{
     color: $green;
     font-size: 14px;
   }
+}
+
+#modal{
+  display: none;
 }
